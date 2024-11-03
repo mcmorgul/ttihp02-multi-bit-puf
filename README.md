@@ -1,6 +1,11 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project for One Bit PUF
+# Tiny Tapeout Verilog Project for Multi Bit PUF
+ This is a PUF design that includese 2**ADDR_BITS x OUT_BITS one_bit_pufs
+ The addr is the address to read OUT_bits of the PUF bits
+ For instance if ADDR_BITS = 2, OUT_BITS = 2
+ The design will include 8 one_bit_pufs, 
+ addr = 2'b10 will read 2 puf bits (OUT[5:4])
 
 - [Read the documentation for project](docs/info.md)
 
