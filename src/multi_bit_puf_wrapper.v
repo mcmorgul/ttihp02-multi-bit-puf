@@ -23,7 +23,7 @@ module tt_um_multi_bit_puf_wrapper (
     // Instantiate puf
     wire [7:0] puf_out;
     puf puf_instance (
-	.clk(clk)
+	.clk(clk),
         .START(start_signal),
 	.addr(ui_in[3:0]),
         .reset(reset_signal),
