@@ -27,7 +27,7 @@ module tt_um_multi_bit_puf_wrapper (
         .START(start_signal),
 	.addr(ui_in[3:0]),
         .reset(reset_signal),
-        .OUT(puf_out)
+        .OUT_reg(puf_out)
     );
 	
     // Assign the output of multi_bit_puf to uo_out
