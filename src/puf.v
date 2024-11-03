@@ -13,7 +13,8 @@ input clk,
 input START, 
 input [ADDR_BITS-1:0] addr,
 input reset, 
-output reg [OUT_BITS-1:0] OUT_reg);
+output reg [OUT_BITS-1:0] OUT_reg
+);
 
 localparam TOTAL_PUFs = 2**ADDR_BITS * OUT_BITS;
 

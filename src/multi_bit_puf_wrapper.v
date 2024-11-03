@@ -20,24 +20,25 @@ module tt_um_multi_bit_puf_wrapper (
     wire start_signal = ena;           // Map START signal to ena
     wire reset_signal = ~rst_n;        // Map reset signal (active-low)
     
-    // Instantiate one_bit_puf or two_bit_puf
-    wire one_bit_out;
+    // Instantiate puf
+    wire [7:0] puf_out;
     one_bit_puf puf_instance (
+		.clk(clk)
         .START(start_signal),
+		.addr(ui_in[3:0]),
         .reset(reset_signal),
-        .OUT(one_bit_out)
+        .OUT(puf_out)
     );
 	
-    // Assign the output of one_bit_puf to the first bit of uo_out
-    assign uo_out[0] = one_bit_out;
+    // Assign the output of multi_bit_puf to uo_out
+    assign uo_out = puf_out;
 
     // Unused output bits are assigned to 0
-    assign uo_out[7:1] = 7'b0;
     assign uio_out = 8'b0;
     assign uio_oe  = 8'b0;
 
 
   // List all unused inputs to prevent warnings such as:
-  wire _unused = &{ui_in, uio_in, clk, 1'b0};
+  wire _unused = &{ui_in[7:4], uio_in, 1'b0};
 
 endmodule
