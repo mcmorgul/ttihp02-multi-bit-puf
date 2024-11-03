@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_one_bit_puf_wrapper (
+module tt_um_multi_bit_puf_wrapper (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
