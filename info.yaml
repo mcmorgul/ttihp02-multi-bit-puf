@@ -18,7 +18,6 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "multi_bit_puf_wrapper.v"
-    - "one_bit_puf.v"
     - "puf.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
